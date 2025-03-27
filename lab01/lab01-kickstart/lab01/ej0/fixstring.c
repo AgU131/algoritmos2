@@ -1,10 +1,7 @@
 #include <stdbool.h>
 #include <stdio.h>
-
 #include <assert.h>
-
 #include "fixstring.h"
-
 
 
 unsigned int fstring_length(fixstring s) {
@@ -26,19 +23,17 @@ bool fstring_eq(fixstring s1, fixstring s2) {
     int i = 0;
     bool son_iguales = true;
     unsigned int tam1 = fstring_length(s1);
-    if (tam1 == fstring_length(s2)) {       // consejo del profe desacerme de los casos particulares (sacar ese if por excasos casos)
-        while (i < tam1) {
-            if (s1[i] != s2[i]) {
-                son_iguales = false;
-            }
-            i++;
+    while (i < tam1) {
+        if (s1[i] != s2[i]) {
+            son_iguales = false;
         }
-    } else {
-        son_iguales = false;
+        i++;
     }
     
     return son_iguales;
 }
+    // Consejo del profe desacerme de los casos particulares (sacar ese if por excasos casos):
+    // if (tam1 == fstring_length(s2)) {while...} else {son_iguales = false;}
 
 bool fstring_less_eq(fixstring s1, fixstring s2) {
     int i = 0;
@@ -49,16 +44,11 @@ bool fstring_less_eq(fixstring s1, fixstring s2) {
     // while (i < tam1) {
     while (s1[i] <= s2[i]) {
         // es_menor_ig = es_menor_ig && (s1[i] <= s2[i]);
-        // if (tam1 <= fstring_length(s2)) {
-        // } else {
-        // }
         es_menor_ig = true;
         i++;
     }
     return es_menor_ig;
 } 
-/*
-*/
 
 
 
