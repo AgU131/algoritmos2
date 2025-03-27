@@ -5,6 +5,7 @@
 
 #define N_WORDS 4
 
+// Para probar puedo usar este archivo, sobreescribir el titulo del main original para que no se ejecute y crear otro main con menos cosas para probar las funciones que voy haciendo
 int main(void) {
     fixstring words[N_WORDS]={"hola", "mundo", "auto","automovil"};
 

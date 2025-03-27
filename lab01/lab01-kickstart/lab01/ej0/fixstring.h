@@ -11,6 +11,7 @@ unsigned int fstring_length(fixstring s);
 /*
  * Returns the length of the string <s>
  *
+ * 
  */
 
 
