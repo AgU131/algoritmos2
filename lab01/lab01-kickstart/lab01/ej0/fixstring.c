@@ -35,11 +35,12 @@ bool fstring_eq(fixstring s1, fixstring s2) {
     // Consejo del profe desacerme de los casos particulares (sacar ese if por excasos casos):
     // if (tam1 == fstring_length(s2)) {while...} else {son_iguales = false;}
 
+
 bool fstring_less_eq(fixstring s1, fixstring s2) {
     int i = 0;
     bool es_menor_ig = false;
-    unsigned int tam1 = fstring_length(s1);
-    unsigned int tam2 = fstring_length(s2);
+    // unsigned int tam1 = fstring_length(s1);
+    // unsigned int tam2 = fstring_length(s2);
     
     // while (i < tam1) {
     while (s1[i] <= s2[i]) {
@@ -49,10 +50,11 @@ bool fstring_less_eq(fixstring s1, fixstring s2) {
     }
     return es_menor_ig;
 } 
+// Aca tenia el error de ir comparando por caracter a caracter y si habia alguno que era menor o ig que el otro me daba true,
+// sin importar del primer caracter que era lo mas importante, de ahi daba mal en los ejemplos "aola" y "chau"
 
 
-
-int main(){
+int main() {
     // char cadena[]="hola mundo !";
     // fixstring a = "hola1233";
     // fixstring b = "ola123323232";
