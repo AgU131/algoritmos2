@@ -38,28 +38,25 @@ bool fstring_eq(fixstring s1, fixstring s2) {
 
 bool fstring_less_eq(fixstring s1, fixstring s2) {
     int i = 0;
-    bool es_menor_ig = false;
-    // unsigned int tam1 = fstring_length(s1);
-    // unsigned int tam2 = fstring_length(s2);
+    unsigned int tam1 = fstring_length(s1);
+    unsigned int tam2 = fstring_length(s2);
     
-    // while (i < tam1) {
-    while (s1[i] <= s2[i]) {
-        // es_menor_ig = es_menor_ig && (s1[i] <= s2[i]);
-        es_menor_ig = true;
+    while (s1[i] == s2[i] && s1[i] == "\0") {
         i++;
     }
-    return es_menor_ig;
+    return ((s1[i] < s2[i]) || (tam1 < tam2));
 } 
+
 // Aca tenia el error de ir comparando por caracter a caracter y si habia alguno que era menor o ig que el otro me daba true,
 // sin importar del primer caracter que era lo mas importante, de ahi daba mal en los ejemplos "aola" y "chau"
 
+// Error. me dio false con "hal\0" y "hal\0". Arregle el predicado final agregandole lo de los tamaños para arreglarlo
+// FALSE esta mal ESTE ERROR
+
 
 int main() {
-    // char cadena[]="hola mundo !";
-    // fixstring a = "hola1233";
-    // fixstring b = "ola123323232";
-    fixstring a = "aola";
-    fixstring b = "chau";
+    fixstring a = "alessss";
+    fixstring b = "halesss";
 
     printf("tamano: %u \n", fstring_length(a));
     printf("equivalente: %d\n"
