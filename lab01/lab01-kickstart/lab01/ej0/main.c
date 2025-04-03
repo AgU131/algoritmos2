@@ -8,7 +8,7 @@
 // Para probar puedo usar este archivo, sobreescribir el titulo del main original para que no se ejecute y crear otro main con menos cosas para probar las funciones que voy haciendo
 
 
-int __main(void) {
+int main(void) {
     fixstring words[N_WORDS]={"hola", "mundo", "auto","automovil"};
 
     printf("Probando fstring_length()\n"
@@ -43,6 +43,7 @@ int __main(void) {
 
 
 
+/*
 int main(void) {
     printf("\n"
            "Probando fstring_length y fstring_eq() y \n"
@@ -52,4 +53,4 @@ int main(void) {
 }
 
 
-
+*/
