@@ -18,6 +18,7 @@ struct bound_data check_bound(int value, int arr[], unsigned int length) {
     bool is_upper = true;
     bool is_lower = true;
     bool exists = false;
+    res.where = 0;
 
 
     // Comprobar si el valor es un upperbound
@@ -26,23 +27,25 @@ struct bound_data check_bound(int value, int arr[], unsigned int length) {
         // if (arr[i] >= value) {
         //     is_upper = true;
         // }
+        
+        // Comprobar si el valor es un lowerbound
         is_lower = is_lower && (arr[i] >= value);
-    // Comprobar si el valor es un lowerbound
         // if (arr[i] <= value) {
         //     is_lower = true;
         // }
-    // Comprobar si el valor existe en el array
+
+        // Comprobar si el valor existe en el array y dar el indice donde esta
         exists = exists || (arr[i] == value);
         if (arr[i] == value) {
             res.exists = true;
             res.where = i;
         }
-    // Inicializar la estructura res
     }
 
     res.is_upperbound = is_upper;
     res.is_lowerbound = is_lower;
-    res.exists = exists;       
+    res.exists = exists;      
+
     return res;
 }
 
