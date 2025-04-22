@@ -31,18 +31,68 @@ void print_board(char board[3][3])
 char get_winner(char board[3][3])
 {
     char winner = '-';
-    //
     // TODO: COMPLETAR
-    //
+    while (winner == '-') {
+        // Comprobar filas
+        for (int i = 0; i < 3; i++)
+        {
+            if (board[i][0] == board[i][1] && board[i][1] == board[i][2])
+            {
+                winner = board[i][0];
+            }
+        }
+        // Comprobar columnas
+        for (int i = 0; i < 3; i++)
+        {
+            if (board[0][i] == board[1][i] && board[1][i] == board[2][i])
+            {
+                winner = board[0][i];
+            }
+        }
+        // Comprobar diagonales
+        if (board[0][0] == board[1][1] && board[1][1] == board[2][2])
+        {
+            winner = board[0][0];
+        }
+        if (board[0][2] == board[1][1] && board[1][1] == board[2][0])
+        {
+            winner = board[0][2];
+        }
+    }
+    // {
+    //     // Comprobar si hay empate
+    //     bool empate = true;
+    //     for (int i = 0; i < 3; i++)
+    //     {
+    //         for (int j = 0; j < 3; j++)
+    //         {
+    //             if (board[i][j] == '-')
+    //             {
+    //                 empate = false;
+    //             }
+    //         }
+    //     }
+    //     if (empate)
+    //     {
+    //         winner = '-';
+    //     }
+    // }
+    
     return winner;
 }
 
 bool has_free_cell(char board[3][3])
 {
     bool free_cell=false;
-    //
     // TODO: COMPLETAR
-    //
+
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 3; i++)
+        {
+            free_cell = free_cell || board[i][j] == '-';
+        } 
+    }
     return free_cell;
 }
 
