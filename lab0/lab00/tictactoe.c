@@ -32,67 +32,58 @@ char get_winner(char board[3][3])
 {
     char winner = '-';
     // TODO: COMPLETAR
-    while (winner == '-') {
-        // Comprobar filas
-        for (int i = 0; i < 3; i++)
+    for (int i = 0; i < 3; i++)
+    {
+        if (board[i][0] != '-' &&
+            board[i][0] == board[i][1] &&
+            board[i][1] == board[i][2])
         {
-            if (board[i][0] == board[i][1] && board[i][1] == board[i][2])
-            {
-                winner = board[i][0];
-            }
-        }
-        // Comprobar columnas
-        for (int i = 0; i < 3; i++)
+            winner = board[i][0];
+        } 
+        else if (board[0][i] != '-' &&
+            board[0][i] == board[1][i] &&
+            board[1][i] == board[2][i])
         {
-            if (board[0][i] == board[1][i] && board[1][i] == board[2][i])
-            {
-                winner = board[0][i];
-            }
+            winner = board[0][i];
         }
-        // Comprobar diagonales
-        if (board[0][0] == board[1][1] && board[1][1] == board[2][2])
+        // diagonales
+        else if (board[0][0] != '-' &&
+            board[0][0] == board[1][1] &&
+            board[1][1] == board[2][2])
         {
             winner = board[0][0];
         }
-        if (board[0][2] == board[1][1] && board[1][1] == board[2][0])
+        else if (board[0][2] != '-' &&
+            board[0][2] == board[1][1] &&
+            board[1][1] == board[2][0])
         {
             winner = board[0][2];
         }
     }
-    // {
-    //     // Comprobar si hay empate
-    //     bool empate = true;
-    //     for (int i = 0; i < 3; i++)
-    //     {
-    //         for (int j = 0; j < 3; j++)
-    //         {
-    //             if (board[i][j] == '-')
-    //             {
-    //                 empate = false;
-    //             }
-    //         }
-    //     }
-    //     if (empate)
-    //     {
-    //         winner = '-';
-    //     }
-    // }
-    
     return winner;
 }
 
 bool has_free_cell(char board[3][3])
 {
-    bool free_cell=false;
+    bool free_cell = false;
     // TODO: COMPLETAR
 
-    for (int i = 0; i < 3; i++)
+    int i = 0, j = 0;
+
+    while (i < 3)
     {
-        for (int j = 0; j < 3; i++)
+        while (j < 3)
         {
-            free_cell = free_cell || board[i][j] == '-';
-        } 
+            if (board[i][j] == '-')
+            {
+                free_cell = true;
+            }
+            j++;
+        }
+
+        i++;
     }
+
     return free_cell;
 }
 
