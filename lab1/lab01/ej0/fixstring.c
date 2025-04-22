@@ -5,32 +5,23 @@
 
 
 unsigned int fstring_length(fixstring s) {
-    unsigned int res = 0;
-    bool final_encontrado = false;
-
-    while (!(final_encontrado)) {
-        if (s[res] == '\0') {
-            final_encontrado = true;
-        } else {
-            res++;
-        }
+    int i = 0;
+    while (s[i] != '\0') {
+            i++;
     }
     
-    return res;
+    return i;
 }
 
 bool fstring_eq(fixstring s1, fixstring s2) {
-    unsigned int i = 0;
+    int i = 0;
     bool son_iguales = true;
-    unsigned int tam1 = fstring_length(s1);
-    while (i < tam1 && son_iguales) {
 
-        if (s1[i] != s2[i]) {
-            son_iguales = false;
-        }
+    while ((s1[i] == s2[i]) && (s1[i] != '\0')) {
         i++;
     }
-    
+    son_iguales = (s1[i] == s2[i]);
+
     return son_iguales;
 }
     // Consejo del profe desacerme de los casos particulares (sacar ese if por excasos casos):
@@ -39,8 +30,6 @@ bool fstring_eq(fixstring s1, fixstring s2) {
 
 bool fstring_less_eq(fixstring s1, fixstring s2) {
     int i = 0;
-    unsigned int tam1 = fstring_length(s1);
-    unsigned int tam2 = fstring_length(s2);
     
     while ((s1[i] == s2[i]) && (s1[i] != '\0')) {
         i++;
@@ -55,7 +44,7 @@ bool fstring_less_eq(fixstring s1, fixstring s2) {
 // Error. me dio false con "hal\0" y "hal\0". Arregle el predicado final agregandole lo de los tamaños para arreglarlo
 // FALSE esta mal ESTE ERROR
 
-
+//Uncomment cuando quiera probar fixSolo
 // int main() {
 //     fixstring a = "alessss";
 //     fixstring b = "halesss";
