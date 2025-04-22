@@ -50,15 +50,16 @@ int main(void) {
     int a[ARRAY_SIZE] = {0, -1, 9, 4};
     int value=9;
     // TODO: COMPLETAR - Pedir entrada al usuario
-    int i = 0, a[ARRAY_SIZE], valor;
-    while (i < ARRAY_SIZE)
-    {
-        printf("ingrese el valor %i del arreglo:\n");
-        scanf("%d", &a[i]);
-        i++;
-    }
-    printf("ingrese el valor:\n");
-    scanf("%d", &valor);
+    // int i = 0;
+    // int b[ARRAY_SIZE], valor;
+    // while (i < ARRAY_SIZE)
+    // {
+    //     printf("ingrese el valor %i del arreglo:\n");
+    //     scanf("%d", &a[i]);
+    //     i++;
+    // }
+    // printf("ingrese el valor:\n");
+    // scanf("%d", &valor);
 
 
     struct bound_data result = check_bound(value, a, ARRAY_SIZE);
