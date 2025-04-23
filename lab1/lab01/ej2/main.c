@@ -54,6 +54,10 @@ int main(int argc, char *argv[]) {
     array_copy(copy, array, length);
 
 
+    /* Print Arreglo desordenado */
+    printf("Arreglo desordenado:\n");
+    array_dump(array, length);
+    
     /* sort el arreglo usando quicksort */
     quick_sort(array, length);
 
