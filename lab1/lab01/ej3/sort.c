@@ -10,15 +10,30 @@
 
 static unsigned int partition(int a[], unsigned int izq, unsigned int der) {
     /* Needs implementation */
-
-    /* PRECONDITION: 
-       0 <= izq < der < length of the array
-
+    /* PRECONDITION: 0 <= izq < der < length of the array
      Permutes elements of a[izq..der] and returns pivot such that:
      - izq <= pivot <= der
      - elements in a[izq,pivot) all 'go_before' (according to function goes_before) a[pivot]
      - a[pivot] 'goes_before' all the elements in a(pivot,der]
     */
+   int i = izq+1, j = der;
+   unsigned int ppiv = izq;
+   while (i <= j) {
+        if (a[i] <= a[ppiv]) 
+        {
+            i++;
+        } else if (a[j] >= a[ppiv]) 
+        {
+            j--;
+        } else if (goes_before(a[ppiv], a[i]) && (goes_before(a[j], a[ppiv])))
+        {
+            swap(a,i,j);
+        }
+    }
+    swap(a,ppiv,j);
+    ppiv = j;
+
+    return ppiv;
 }
 
 static void quick_sort_rec(int a[], unsigned int izq, unsigned int der) {
