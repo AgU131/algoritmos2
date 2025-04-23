@@ -23,7 +23,12 @@ static unsigned int partition(int a[], unsigned int izq, unsigned int der) {
 
 static void quick_sort_rec(int a[], unsigned int izq, unsigned int der) {
     /* copiá acá la implementación que hiciste en el ejercicio 3 */
-
+    unsigned int ppiv;
+    if (der > izq) {
+        ppiv = partition(a,izq,der);
+        quick_sort_rec(a,izq,ppiv-1);
+        quick_sort_rec(a,ppiv+1,der);
+    }
 }
 
 void quick_sort(int a[], unsigned int length) {
