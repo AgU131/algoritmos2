@@ -28,7 +28,7 @@ void print_help(char *program_name) {
            program_name);
 }
 
-char *parse_filepath(int argc, char *argv[]) {
+ char *parse_filepath(int argc, char *argv[]) {
     /* Parse the filepath given by command line argument. */
     char *result = NULL;
 
@@ -58,6 +58,11 @@ int main(int argc, char *argv[]) {
   int copy[MAX_SIZE];
   array_copy(copy, array, length);
 
+  
+  /* show the unordered array in the screen */
+  array_dump(array, length);
+  
+  
   /* do the actual sorting */
   insertion_sort(array, length);
 
