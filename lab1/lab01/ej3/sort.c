@@ -16,9 +16,9 @@ static unsigned int partition(int a[], unsigned int izq, unsigned int der) {
      - elements in a[izq,pivot) all 'go_before' (according to function goes_before) a[pivot]
      - a[pivot] 'goes_before' all the elements in a(pivot,der]
     */
-   int i = izq+1, j = der;
-   unsigned int ppiv = izq;
-   while (i <= j) {
+    int i = izq+1, j = der;
+    unsigned int ppiv = izq;
+    while (i <= j) {
         if (a[i] <= a[ppiv]) 
         {
             i++;
