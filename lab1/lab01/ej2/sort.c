@@ -13,9 +13,10 @@ static void quick_sort_rec(int a[], unsigned int izq, unsigned int der) {
        (no se puede leer, pero en sort_helpers.h vas a encontrar información
         para saber cómo usarlo)
     */
-   
-    unsigned int pivot = partition(a, izq, der);
+
+    unsigned int pivot;
     if (der > izq) {
+        pivot = partition(a, izq, der);
         quick_sort_rec(a, izq, pivot - 1);
         quick_sort_rec(a, pivot + 1, der);
     }  
