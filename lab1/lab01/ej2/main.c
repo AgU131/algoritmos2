@@ -36,9 +36,7 @@ char *parse_filepath(int argc, char *argv[]) {
         print_help(argv[0]);
         exit(EXIT_FAILURE);
     }
-
     result = argv[1];
-
     return result;
 }
 
@@ -47,23 +45,23 @@ int main(int argc, char *argv[]) {
 
     /* parse the filepath given in command line arguments */
     filepath = parse_filepath(argc, argv);
-
     /* create an array of MAX_SIZE elements */
     int array[MAX_SIZE];
-
     /* parse the file to fill the array and obtain the actual length */
     unsigned int length = array_from_file(array, MAX_SIZE, filepath);
-
     /* create a copy of the array, to do some checks later */
     int copy[MAX_SIZE];
     array_copy(copy, array, length);
 
+
+    /* sort el arreglo usando quicksort */
+    quick_sort(array, length);
+
+
     /* show the ordered array in the screen */
     array_dump(array, length);
-
     /* check if it is sorted */
     assert(array_is_sorted(array, length));
-
     /* check if it is a permutation of original */
     assert(array_is_permutation_of(copy, array, length));
     return EXIT_SUCCESS;
