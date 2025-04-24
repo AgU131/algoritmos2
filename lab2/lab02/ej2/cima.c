@@ -13,10 +13,15 @@
  * @param length Largo del arreglo.
  */
 bool tiene_cima(int a[], int length) {
-
     // COMPLETAR!!
-
-    return false;
+    int i = 0;
+    while (i < length - 1 && a[i] < a[i+1]){
+        i++;
+        }
+        while (i < length - 1 && a[i] > a[i+1]){
+        i++;
+        }
+        return (i == length - 1);
 }
 
 /**
@@ -32,8 +37,10 @@ bool tiene_cima(int a[], int length) {
  * @param length Largo del arreglo.
  */
 int cima(int a[], int length) {
-
     // COMPLETAR!!
-
-    return 0;
+    int k = 0;
+    while ((k < length) && (a[k] < a[k+1])){
+        k++;
+    }
+    return k;
 }
