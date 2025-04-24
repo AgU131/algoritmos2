@@ -40,9 +40,13 @@ bool tiene_cima(int a[], int length) {
 int cima(int a[], int length) {
     // COMPLETAR!!
     int k = 0;
-    while ((k < length) && (a[k] < a[k+1])){
+    while ((k < length - 1) && (a[k] < a[k+1])){
         k++;
     }
-
+    // dos opciones: 
+    // 1. llegamos al final del arreglo que es todo creciente 
+    // 2. dejó de ser creciente entre la posición k y k+1 
+ 
+    // en ambos casos la cima se encuentra en la posición k:
     return k;
 }
