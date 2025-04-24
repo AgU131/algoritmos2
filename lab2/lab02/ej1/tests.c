@@ -3,7 +3,7 @@
 #include "k_esimo.h"
 
 #define MAX_LENGTH 5
-#define N_TESTCASES 1
+#define N_TESTCASES 10
 
 struct testcase {
     int a[MAX_LENGTH];
