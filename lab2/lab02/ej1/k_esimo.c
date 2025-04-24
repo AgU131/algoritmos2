@@ -25,7 +25,7 @@ int k_esimo(int a[], int length, int k) {
     ppiv = partition(a, izq, der);
     while (ppiv != k)
     {
-        if (ppiv < k) {
+        if (goes_before(ppiv, k)) {
             izq = ppiv +1;
         } else {
             der = ppiv -1;
