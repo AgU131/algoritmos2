@@ -8,18 +8,13 @@
 #include "fixstring.h"
 
 void swap(fixstring a[], unsigned int i, unsigned int j) {
-    /*
-     * COMPLETAR
-     *
-     */
+    /*COMPLETAR*/
+    fixstring_swap(a[i], a[j]);
 }
 
 bool goes_before(fixstring x, fixstring y) {
-    /*
-     * COMPLETAR
-     *
-     */
-    return false;
+    /*COMPLETAR*/
+    return fixstring_less_eq(x, y);
 }
 
 bool array_is_sorted(fixstring array[], unsigned int length) {
