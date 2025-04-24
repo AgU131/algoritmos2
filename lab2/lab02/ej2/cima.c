@@ -15,13 +15,14 @@
 bool tiene_cima(int a[], int length) {
     // COMPLETAR!!
     int i = 0;
-    while (i < length - 1 && a[i] < a[i+1]){
+    while (i < length - 1 && a[i] < a[i+1]) {
         i++;
-        }
-        while (i < length - 1 && a[i] > a[i+1]){
+    }
+    while (i < length - 1 && a[i] > a[i+1]) {
         i++;
-        }
-        return (i == length - 1);
+    }
+    
+    return (i == length - 1);
 }
 
 /**
@@ -42,5 +43,6 @@ int cima(int a[], int length) {
     while ((k < length) && (a[k] < a[k+1])){
         k++;
     }
+
     return k;
 }
