@@ -12,6 +12,7 @@
         "ostream": "c",
         "streambuf": "c",
         "functional": "c",
-        "tuple": "c"
+        "tuple": "c",
+        "assert.h": "c"
     }
 }
