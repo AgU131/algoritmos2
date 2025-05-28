@@ -36,11 +36,32 @@ int main(void) {
     */
     
     //pruebas primero:
+    /*
     int *p = &x;
     int *q = p;
     printf("el puntero p = %d\n", *p);
     printf("el puntero q = %d\n", *q);
+    */
+    //Resolucion:
+    // Primero declaro e inicializo los punteros:
+    int *p = NULL;
+    char *q = NULL;
+
+    //despues apunto los punteros a la direccion de la variable que quiero modificar
+    //y modifico su valor
+    p = &x;   // puntero p apunta a la direccion de x (apunta a su caja)
+    *p = 9;  // puntero abre la caja y modifica lo que contenga x
+    //ahora x = 10
+
+    p = &a[1];   // apunto
+    *p = 42;     // cambio el valor
+
+    p = &m.age;
+    *p = 100;
     
+    q = &m.name_initial;
+    *q = 'F';
+    //done
 
     printf("x = %d\n", x);
     printf("m = (%d, %c)\n", m.age, m.name_initial);
