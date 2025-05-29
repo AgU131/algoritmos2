@@ -3,7 +3,7 @@
 #include <assert.h>
 
 void absolute(int x, int *y) {
-    *y = x;
+    *y = x; // aca no necesitamos hacer que el puntero y apunte a la direccion de memoria de x y despues la modifique, sino solamente asignar lo que x contiene
     if (*y < 0) {
         *y = -x;  // Si x es negativo, asigna -x a y
     }
