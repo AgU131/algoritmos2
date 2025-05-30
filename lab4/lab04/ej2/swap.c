@@ -3,7 +3,7 @@
 #include <assert.h>
 
 /*
-Ejercicio Traducir:
+// Ejercicio Traducir:
 proc swap(in/out a : int, in/out b : int) 
     var aux : int 
     aux := a 
@@ -28,7 +28,7 @@ void swap (int *a, int *b){
     *b = aux;
 }
 int main(void) {
-    int x=6, y=4;
+    int x=61111, y=4;
     printf("\nx = %d,\ny = %d\n", x, y);   //Variables antes del swap
     swap(&x, &y);
     printf("\nx = %d,\ny = %d\n", x, y);   //Variables despues del swap
