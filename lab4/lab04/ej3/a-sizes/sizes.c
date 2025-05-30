@@ -25,11 +25,21 @@ int main(void) {
                                         sizeof(messi.height),
                                         sizeof(messi.name) + sizeof(messi.age) + sizeof(messi.height));
 
-    /*
-     *
-     * COMPLETAR
-     *
-     */
+    /*     COMPLETAR     */
+
+    name_t *r = NULL;
+    unsigned *p = NULL;
+    data_t *q = NULL;
+    
+    printf("Direcciones de Memoria:");
+    r = &messi.name;
+    printf("Direccion de name-size: %p\n", (void *) r);
+    p = &messi.age;
+    printf("Direccion de age-size: %p\n", (void *) p);
+    p = &messi.height;
+    printf("Direccion de height-size: %p\n", (void *) p);
+    q = &messi;
+    printf("Direccion total de data_t-size: %p\n", (void *) q);
 
     return EXIT_SUCCESS;
 }
