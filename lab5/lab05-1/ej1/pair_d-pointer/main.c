@@ -2,15 +2,13 @@
 #include <stdio.h>   /* printf()...     */
 #include "pair.h"    /* TAD Par         */
 
-struct s_pair_t {
-    int fst;
-    int snd;
-};
-
+//aca no debo declarar el struct del pair.c porque romperia el encapsulamiento
 static
 void show_pair(pair_t p) {
-    printf("(%d, %d)\n", p->fst, p->snd);
-}
+    printf("(%d, %d)\n", pair_first(p), pair_second(p));
+}  //aca debo utilizar las mismas funciones para declarar el primer y ultimo elemento
+// ya que lo que habia hecho antes era declarar punteron, siendo que en teoria no sabria que esta implementado con punteros 
+//ADEMAS debo complicar con gcc -Wall -Werror -Wextra -pedantic -std=c99 -c main.c pair.c pair.h
 
 int main(void) { 
     pair_t p, q;
