@@ -1,10 +1,11 @@
 #include <stdlib.h>  /* EXIT_SUCCESS... */
 #include <stdio.h>   /* printf()...     */
 #include "pair.h"    /* TAD Par         */
+#include "pair.c"    /* TAD Par implementacion          */
 
 static
 void show_pair(pair_t p) {
-    printf("(%d, %d)\n", p.fst, p.snd);
+    printf("(%d, %d)\n", p.values[0], p.values[1]);
 }
 
 
