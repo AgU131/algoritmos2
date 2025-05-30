@@ -1,8 +1,11 @@
 #include <stdlib.h>  /* EXIT_SUCCESS... */
 #include <stdio.h>   /* printf()...     */
 #include "pair.h"    /* TAD Par         */
-#include "pair.c"    /* TAD Par         */
 
+struct s_pair_t {
+    int fst;
+    int snd;
+};
 
 static
 void show_pair(pair_t p) {
