@@ -12,6 +12,8 @@ counter counter_init(void) {
     counter n = NULL;
     n = malloc(sizeof(counter));
     n->count = 0;
+
+    return n;
 }
 
 void counter_inc(counter c) {
@@ -31,8 +33,11 @@ counter counter_copy(counter c) {
     counter n = NULL;
     n = malloc(sizeof(counter));
     n->count = c->count;
+
+    return n;
 }
 
 void counter_destroy(counter c) {
-    return c;
+    free(c);
+    c = NULL;
 }
