@@ -25,13 +25,13 @@ bool counter_is_init(counter c) {
 }
 
 void counter_dec(counter c) {
-    assert(!(counter_is_init(c)));  //Me aseguro que counter no este en su pos inicial antes de decrementar
+    assert(!counter_is_init(c));  //Me aseguro que counter no este en su pos inicial antes de decrementar
     c->count -= 1;
 }
 
 counter counter_copy(counter c) {
     counter n = NULL;
-    n = malloc(sizeof(counter));
+    n = counter_init();
     n->count = c->count;
 
     return n;
