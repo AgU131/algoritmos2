@@ -9,15 +9,14 @@ struct _counter {
 };
 
 counter counter_init(void) {
-    counter n = NULL;
-    n = malloc(sizeof(counter));
-    n->count = 0;
+    counter c = malloc(sizeof(counter));
+    (c->count) = 0;
 
-    return n;
+    return c;
 }
 
 void counter_inc(counter c) {
-    c->count += 1;
+    ++(c->count);   // c->count += 1; tambien esta bien
 }
 
 bool counter_is_init(counter c) {
@@ -25,19 +24,20 @@ bool counter_is_init(counter c) {
 }
 
 void counter_dec(counter c) {
-    assert(!counter_is_init(c));  //Me aseguro que counter no este en su pos inicial antes de decrementar
-    c->count -= 1;
+    //Me aseguro que counter no este en su pos inicial antes de decrementar
+    assert(!counter_is_init(c));
+    --(c->count);   // c->count -= 1; tambien esta bien
 }
 
 counter counter_copy(counter c) {
-    counter n = NULL;
-    n = counter_init();
-    n->count = c->count;
+    counter d = NULL;
+    d = counter_init();
+    d->count = c->count;
 
-    return n;
+    return d;
 }
 
 void counter_destroy(counter c) {
     free(c);
-    c = NULL;
+    //c = NULL;     // Opcional
 }
