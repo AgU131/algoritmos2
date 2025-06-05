@@ -10,8 +10,8 @@ Definimos un nuevos tipos:
 3. para el indice de una lista
 */
 typedef int list_elem;
-typedef int list_length;
-typedef int list_index;
+typedef unsigned int list_length;
+typedef unsigned int list_index;
 
 /* Definimos la lista */
 typedef struct node* list;
@@ -23,7 +23,7 @@ list empty(void);
 {- crea una lista vacía. -}
 */
 
-list addl (list l, list_elem e);
+list addl(list l, list_elem e);
 /*
 {- agrega el elemento e al comienzo de la lista l. -}
 */
@@ -39,13 +39,13 @@ bool is_empty(list l);
 {- Devuelve True si l es vacía. -}
 */
 
-list_elem head(list e);
+list_elem head(list l);
 /*
 {- Devuelve el primer elemento de la lista l -}
 {- PRE: not is_empty(l) -}
 */
 
-list_elem tail(list l);
+list tail(list l);
 /*
 {- Elimina el primer elemento de la lista l -}
 {- PRE: not is_empty(l) -}
@@ -56,7 +56,7 @@ list addr(list l, list_elem e);
 {- agrega el elemento e al final de la lista l. -}
 */
 
-list_length length(list_elem e);
+list_length length(list l);
 /*
 {- Devuelve la cantidad de elementos de la lista l -}
 */
