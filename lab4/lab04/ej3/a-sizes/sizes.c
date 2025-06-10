@@ -20,10 +20,11 @@ int main(void) {
     printf("name-size  : %lu bytes\n"
            "age-size   : %lu bytes\n"
            "height-size: %lu bytes\n"
-           "data_t-size: %lu bytes\n",  sizeof(messi.name), 
-                                        sizeof(messi.age),
-                                        sizeof(messi.height),
-                                        sizeof(messi.name) + sizeof(messi.age) + sizeof(messi.height));
+           "data_t-size: %lu bytes\n",  
+           sizeof(messi.name), 
+           sizeof(messi.age),
+           sizeof(messi.height),
+           sizeof(messi.name) + sizeof(messi.age) + sizeof(messi.height));
 
     /*     COMPLETAR     */
 
@@ -31,7 +32,7 @@ int main(void) {
     unsigned *p = NULL;
     data_t *q = NULL;
     
-    printf("Direcciones de Memoria:");
+    printf("\nDirecciones de Memoria:\n");
     r = &messi.name;
     printf("Direccion de name-size: %p\n", (void *) r);
     p = &messi.age;
