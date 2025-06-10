@@ -5,12 +5,12 @@
 void absolute(int x, int *y) {
     *y = x; // aca no necesitamos hacer que el puntero y apunte a la direccion de memoria de x y despues la modifique, sino solamente asignar lo que x contiene
     if (*y < 0) {
-        *y = -x;  // Si x es negativo, asigna -x a y
+        *y = -(*y);  // Si x es negativo, asigna -*y (-x) a *y
     }
 }
 
 int main(void) {
-    int a=-100, res=0;  // No modificar esta declaración
+    int a=-10, res=0;  // No modificar esta declaración
     // --- No se deben declarar variables nuevas ---
 
     printf("res antes de absolute = %d\n", res);
@@ -23,4 +23,3 @@ int main(void) {
     assert(res >= 0 && (res == a || res == -a));
     return EXIT_SUCCESS;
 }
-

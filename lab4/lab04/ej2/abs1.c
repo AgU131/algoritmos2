@@ -12,9 +12,12 @@ int main(void) {
     int a=0, res=0;
     a = -10;
     absolute(a, res);
-    //{- supongamos que print() muestra el valor de una variable -}
     printf("%d\n", res);
-    //{- esta última asignación es análoga a `return EXIT_SUCCESS;` -}
 
     return EXIT_SUCCESS;
 }
+
+/*
+¿Qué valor se muestra por pantalla? ¿Coincide con el programa en el lenguaje del teórico?
+    Se muestra el valor 0, no coincide con el programa del teórico.
+*/
