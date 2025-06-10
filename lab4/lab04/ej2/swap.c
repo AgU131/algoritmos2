@@ -32,7 +32,7 @@ int main(void) {
     int x=61111, y=4;
     printf("\nx = %d\ny = %d\n", x, y);   //Variables antes del swap
     swap(&x, &y);
-    printf("\nx = %d\ny = %d\n", x, y);   //Variables despues del swap
+    printf("\nx = %d\ny = %d\n\n", x, y);   //Variables despues del swap
     
     return EXIT_SUCCESS;
 }
