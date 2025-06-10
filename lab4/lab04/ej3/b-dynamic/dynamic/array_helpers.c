@@ -38,6 +38,7 @@ int * array_from_file(const char *filepath, size_t *length) {
     // COMPLETAR: - Reservar memoria para array
     //            - Cambiar el valor de *length para que contenga el tamaño del
     //              arreglo.
+    // printf("%ld\n",sizeof(int)); //prueba para ver cuanto da sizeofint
     array = malloc(sizeof(int) * size); //multiplicacion
     //Aca multimplicamos The amount of memory requested is calculated by multiplying sizeof(int) (the number of bytes required to store a single integer on your system) by size (the number of elements you want in your array).
     *length = size; //(size_t)size ??
