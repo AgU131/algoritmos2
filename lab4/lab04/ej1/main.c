@@ -62,6 +62,9 @@ int main(void) {
     q = &m.name_initial;
     *q = 'F';
     
+    //se podria haber hecho asi:    (creo)
+    //  q = &m;
+    // q->mane_initial = 'F';
 
     printf("x = %d\n", x);
     printf("m = (%d, %c)\n", m.age, m.name_initial);
