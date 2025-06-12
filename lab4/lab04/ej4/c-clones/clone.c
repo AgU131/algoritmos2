@@ -6,7 +6,9 @@
 #define MAX_LENGTH 1820
 
 char *string_clone(const char *str, size_t length) {
-    char clon[MAX_LENGTH];
+    // char clon[MAX_LENGTH];
+    char *clon = malloc(sizeof(char) * length + 1);  
+    // es lo mismo que poner ese malloc directamente en el puntero ouput
     char *output=clon;
     for (size_t i=0; i<length;i++) {
         output[i] = str[i];
@@ -67,6 +69,9 @@ int main(void) {
     copy[5] = 'g';
     printf("Copia   :\n" ANSI_CYAN
            " %s\n", copy);
+
+    //Extra añadido porque estamos usando memoria dinamica
+    free(copy);
 
     return EXIT_SUCCESS;
 }
