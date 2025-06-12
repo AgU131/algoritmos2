@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <assert.h>
 
 typedef struct Node {
     int data;
@@ -13,7 +14,19 @@ typedef Node *List;
  */
 List setup_example() {
     // COMPLETAR ACÁ!
+    Node *n2 = malloc(sizeof(Node)); 
+    Node *n1 = malloc(sizeof(Node)); 
+    Node *n0 = malloc(sizeof(Node)); 
+
+    n2->data = 20;
+    n1->data = 10;
+    n0->data = 0;
     
+    n2->next = n1;
+    n1->next = n0;
+    n0->next = NULL;
+
+    return n2;
 }
 
 /**
@@ -23,7 +36,16 @@ List setup_example() {
  */
 void append_example(List xs) {
     // COMPLETAR ACÁ!
+    assert(xs != NULL);
+    List l = malloc(sizeof(Node));
+    l->data = 88;
+    l->next = NULL;
 
+    while(xs->next != NULL) {
+        xs = xs->next;
+    }
+
+    xs->next = l;
 }
 
 void show_list(List xs) {
@@ -34,6 +56,17 @@ void show_list(List xs) {
     }
     printf("]\n");
 }
+
+//Aca un extra: FREE de la lista completa y sus elementos
+void free_list(List xs) {
+    while (xs!=NULL) {
+        List temp = xs;
+        xs = xs->next;
+        free(temp);
+    }
+}
+
+
 
 int main(void) {
     List my_list;
@@ -49,6 +82,9 @@ int main(void) {
     printf("Lista después del append: ");
 
     show_list(my_list);
+
+    //EXTRA
+    free_list(my_list);
 
     return 0;
 }
