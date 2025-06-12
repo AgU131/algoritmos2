@@ -79,6 +79,7 @@ int main(void) {
     printf("Copia   :\n" ANSI_CYAN
            " %s\n", copy);
            
+    
     //Liberamos la memoria usada
     free(copy);
 
