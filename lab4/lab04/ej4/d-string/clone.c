@@ -7,10 +7,22 @@
 
 char *string_clone(const char *str) {
     char *clone=NULL;
-    /*
-     * COMPLETAR
-     *
-     */
+    
+    /* COMPLETAR */
+    size_t length = strlen(str);
+    clone = malloc(sizeof(char) * length + 1);
+    char *output = clone;
+
+    //Corroboramos que no sea vacio el puntero
+    if(output == NULL) {
+        printf("Error allocating memory.\n");
+        exit(EXIT_FAILURE);
+    }
+
+    //Hacemos la copia con la propiedad/funcion strcpy(<donde sera copiado>, <lo que sera copiado>)
+    strcpy(output, str);
+    // output[length] = '\0';  // No necesario
+
     return output;
 }
 
@@ -66,6 +78,9 @@ int main(void) {
     copy[5] = 'g';
     printf("Copia   :\n" ANSI_CYAN
            " %s\n", copy);
+           
+    //Liberamos la memoria usada
+    free(copy);
 
     return EXIT_SUCCESS;
 }
