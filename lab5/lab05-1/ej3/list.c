@@ -8,88 +8,132 @@
 
 // typedef list_elem elem;
 
-struct node{
+struct node {
     list_elem elem;
     struct node *next;
 };
 
-
 /* Constructors */
 list empty(void) {
-
+    list l=NULL;
+    return l;
 }
 
 list addl(list l, list_elem e) {
-    
+    list p = malloc(sizeof(struct node));
+    p->elem = e;
+    p->next = l;
+    l = p;
+    return l;
 }
-/*
-{- agrega el elemento e al comienzo de la lista l. -}
-*/
 
 list destroy(list l){
-    free(l);
+    assert(l!=NULL);
+    while(l != NULL) {
+        p = l;
+        l = l->next;
+        // p->next = NULL;
+        free(p);
+    }
     return l = NULL;
 }
 
 /* Operations */
-bool is_empty(list l);
-/*
-{- Devuelve True si l es vacía. -}
-*/
+bool is_empty(list l) {
+    return (l == NULL);
+}
 
-list_elem head(list l);
-/*
-{- Devuelve el primer elemento de la lista l -}
-{- PRE: not is_empty(l) -}
-*/
+list_elem head(list l) {
+    assert(!is_empty(l));
+    return l->elem;
+}
 
-list tail(list l);
-/*
-{- Elimina el primer elemento de la lista l -}
-{- PRE: not is_empty(l) -}
-*/
 
-list addr(list l, list_elem e);
-/*
-{- agrega el elemento e al final de la lista l. -}
-*/
+list tail(list l) {
+    assert(!is_empty(l));
+    list p = l;
+    l = l->next;
+    // p->next = NULL;
+    free(p);
+    return l;
+}
 
-list_length length(list l);
-/*
-{- Devuelve la cantidad de elementos de la lista l -}
-*/
+list addr(list l, list_elem e) {
+    assert(!is_empty(l));
+    list p = l;
+    list q = malloc(sizeof(struct node));
+    q->elem = e;
+    q->next = NULL;
+    while(p->next != NULL) {
+        p = p->next;
+    }
+    p->next = q;
+    return l;
+}
 
-list concat(list l1, list l2);
-/*  
-{- Agrega al final de l todos los elementos de l0
-en el mismo orden.-}
-*/
+list_length length(list l) {
+    list_length tam=0;
+    list p=l;
+    while(p != NULL) {
+        p = p->next;
+        tam++;
+    }
+    return tam;
+}
 
-list_elem index(list l, list_index n);
-/*  
-{- Devuelve el n-ésimo elemento de la lista l -}
-{- PRE: length(l) > n -}
-*/
+list concat(list l1, list l2) {
+    assert(!(is_empty(l1) || is_empty(l2)));
+    list l = empty();
+    list p = l1;
+    l=l1;
+    while(l->next != NULL) {
+        l = l->next;
+    }
+    l->next = l2;
+    return p;
+}
 
-list take(list l, list_index n);
-/*
-{- Deja en l sólo los primeros n
-elementos, eliminando el resto -}
-*/
+list_elem index(list l, list_index n) {
+    assert (length(l) > n);
+    list p = l;
+    list_index i = 0;
+    while (i < n) {
+        p = p->next;
+    }
+    return p->elem;
+}
 
-list drop(list l, list_index n){
+list take(list l, list_index n) {
+    assert(!is_empty(l));
 
 }
-/*
-{- Elimina los primeros n elementos de l -}
-*/
 
-list copy_list(list l);
-/*
-{- Copia todos los elementos de l1 
-*/
+list drop(list l, list_index n){
+    list p=NULL;
+    int i=0;
+    while (l!=NULL && i<n) {
+        p = l;
+        l = l->next;
+        p->next = NULL;
+        free(p);
+        i++;
+    }
+    return l;
+}
+
+list copy_list(list l) {
+    list copy = empty();
+    list p = l;
+    while (p!=NULL) {
+        addr(copy, p->elem);
+        p = p->next;
+    }
+    return copy;
+}
 
 
+
+//Listas circular anidadas
 list empty(void) {
     list res = NULL;
     res = (list) calloc(1, sizeof(struct _list));
@@ -120,7 +164,7 @@ end proc
 
 bool is_empty(list l) {
     assert(l != NULL);
-    return l->size = 0;
+    return l->size == 0;
 }
 
 elem head(list l){

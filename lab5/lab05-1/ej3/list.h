@@ -14,7 +14,7 @@ typedef unsigned int list_length;
 typedef unsigned int list_index;
 
 /* Definimos la lista */
-typedef struct node* list;
+typedef struct node *list;
 
 
 /* Constructors */
