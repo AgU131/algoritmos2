@@ -29,6 +29,7 @@ list addl(list l, list_elem e) {
 
 list destroy(list l){
     assert(l!=NULL);
+    list p;
     while(l != NULL) {
         p = l;
         l = l->next;
@@ -59,7 +60,7 @@ list tail(list l) {
 }
 
 list addr(list l, list_elem e) {
-    assert(!is_empty(l));
+    // assert(!is_empty(l));
     list p = l;
     list q = malloc(sizeof(struct node));
     q->elem = e;
@@ -105,7 +106,15 @@ list_elem index(list l, list_index n) {
 
 list take(list l, list_index n) {
     assert(!is_empty(l));
-
+    list p = l;
+    list_index i=0;
+    while(i < n) {
+        p = l->next;
+        i++;
+    }
+    destroy(p);
+    return l;
+    //Este lo voy a hacer ROBUSTO
 }
 
 list drop(list l, list_index n){
@@ -131,7 +140,7 @@ list copy_list(list l) {
     return copy;
 }
 
-
+/*
 
 //Listas circular anidadas
 list empty(void) {
@@ -216,3 +225,5 @@ list destroy_list(list l) {
     //no hace falta liberar mada mas porque lo demas es memoria estatica
     return NULL;
 }
+
+*/
