@@ -16,10 +16,12 @@ counter counter_init(void) {
 }
 
 void counter_inc(counter c) {
+    assert(c!=NULL);
     ++(c->count);   // c->count += 1; tambien esta bien
 }
 
 bool counter_is_init(counter c) {
+    assert(c!=NULL);
     return (c->count == 0);
 }
 
@@ -30,6 +32,7 @@ void counter_dec(counter c) {
 }
 
 counter counter_copy(counter c) {
+    assert(c!=NULL);
     counter d = NULL;
     d = counter_init();
     d->count = c->count;

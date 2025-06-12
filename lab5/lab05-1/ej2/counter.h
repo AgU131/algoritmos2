@@ -5,7 +5,7 @@
 
 /* counter as a pointer to structs to guarantee encapsulation */
 typedef struct _counter * counter;
-
+// Esto cumple la encapsulacion pq no declaro que es counter en el .h
 
 /* Constructors */
 counter counter_init(void);
