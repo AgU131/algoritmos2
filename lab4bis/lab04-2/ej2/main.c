@@ -13,18 +13,18 @@ typedef Node *List;
  */
 List setup_example() {
     // COMPLETAR ACÁ!
-    Node *n0 = malloc(sizeof(Node)); 
-    Node *n1 = malloc(sizeof(Node)); 
     Node *n2 = malloc(sizeof(Node)); 
+    Node *n1 = malloc(sizeof(Node)); 
+    Node *n0 = malloc(sizeof(Node)); 
 
-    n0->data = 0;
-    n1->data = 10;
     n2->data = 20;
+    n1->data = 10;
+    n0->data = 0;
     
     n2->next = n1;
     n1->next = n0;
     n0->next = NULL;
-
+    //Ordenaos para que aparezcan como en la imagen del enunciado
     return n2;
 }
 

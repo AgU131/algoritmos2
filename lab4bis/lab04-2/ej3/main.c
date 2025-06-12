@@ -12,9 +12,8 @@ typedef Node *List;
  * @brief Construye y devuelve una lista de ejemplo de 3 elementos
  */
 List setup_example() {
-    //
     // COMPLETAR ACÁ!
-    //
+    
 }
 
 /**
@@ -23,9 +22,8 @@ List setup_example() {
  * Precondicion: la lista xs no debe ser vacía
  */
 void append_example(List xs) {
-    //
     // COMPLETAR ACÁ!
-    //
+
 }
 
 void show_list(List xs) {
