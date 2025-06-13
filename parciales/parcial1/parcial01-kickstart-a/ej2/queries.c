@@ -16,6 +16,8 @@ int year_rainfall(WeatherTable a, int year) {
     for (month_t mes = january; mes <= december; mes++) {
       for (unsigned int dia = 0; dia < DAYS; dia++) {
         result = result + a[year][mes][dia]._rainfall;
+        // Cooreccion de chatgpt al parcial que me daba error
+        // result += a[year - FST_YEAR][mes][dia]._rainfall;
       }
     }
 
