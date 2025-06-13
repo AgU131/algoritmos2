@@ -11,12 +11,13 @@ struct _counter {
 counter counter_init(void) {
     counter c = malloc(sizeof(counter));
     (c->count) = 0;
+    assert(c!=NULL);
 
     return c;
 }
 
 void counter_inc(counter c) {
-    assert(c!=NULL);
+    // assert(c!=NULL);
     ++(c->count);   // c->count += 1; tambien esta bien
 }
 
