@@ -36,7 +36,7 @@ bool fstring_less_eq(fixstring s1, fixstring s2) {
     }
 
     return (s1[i] <= s2[i]);
-} 
+}
 
 // Aca tenia el error de ir comparando por caracter a caracter y si habia alguno que era menor o ig que el otro me daba true,
 // sin importar del primer caracter que era lo mas importante, de ahi daba mal en los ejemplos "aola" y "chau"

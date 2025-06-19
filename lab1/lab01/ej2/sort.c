@@ -12,8 +12,8 @@ static void quick_sort_rec(int a[], unsigned int izq, unsigned int der) {
  unsigned int ppiv;
     if (der > izq) {
         ppiv = partition(a,izq,der);
-        quick_sort_rec(a,izq,ppiv-1);
-        quick_sort_rec(a,ppiv+1,der);
+        quick_sort_rec(a,izq,ppiv == 0 ? ppiv : ppiv-1);   //Correccion en ppiv: Usar el modo compacto del if -> (piv == 0 ? piv : piv-1) en vez de solo el ppiv-1
+        quick_sort_rec(a,ppiv+1,der);   // Y aca (piv == der ? der : piv+1)
     }  
 }
 

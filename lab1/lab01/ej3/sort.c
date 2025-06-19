@@ -19,10 +19,10 @@ static unsigned int partition(int a[], unsigned int izq, unsigned int der) {
     int i = izq+1, j = der;
     unsigned int ppiv = izq;
     while (i <= j) {
-        if (a[i] <= a[ppiv]) 
+        if (goes_before(a[i], a[ppiv]))  //Aca tengo que usar el goes before no implementar nada extra. Antes(a[i] <= a[ppiv])
         {
             i++;
-        } else if (a[j] >= a[ppiv]) 
+        } else if (goes_before(a[j], a[ppiv])) //Igual aca, Antes: (a[j] >= a[ppiv])
         {
             j--;
         } else if (goes_before(a[ppiv], a[i]) && (goes_before(a[j], a[ppiv])))

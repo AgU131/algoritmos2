@@ -14,14 +14,11 @@ static unsigned int partition(fixstring a[], unsigned int izq, unsigned int der)
     int i = izq+1, j = der;
     unsigned int ppiv = izq;
     while (i <= j) {
-        if (a[i] <= a[ppiv]) 
-        {
+        if (goes_before(a[i], a[ppiv])){
             i++;
-        } else if (a[j] >= a[ppiv]) 
-        {
+        } else if (goes_before(a[j], a[ppiv])){
             j--;
-        } else if (goes_before(a[ppiv], a[i]) && (goes_before(a[j], a[ppiv])))
-        {
+        } else if (goes_before(a[ppiv], a[i]) && (goes_before(a[j], a[ppiv]))){
             swap(a,i,j);
         }
     }
@@ -36,7 +33,7 @@ static void quick_sort_rec(fixstring a[], unsigned int izq, unsigned int der) {
     unsigned int ppiv;
     if (der > izq) {
         ppiv = partition(a,izq,der);
-        quick_sort_rec(a,izq,ppiv-1);
+        quick_sort_rec(a,izq,ppiv == 0 ? ppiv : ppiv-1);
         quick_sort_rec(a,ppiv+1,der);
     }
 }
