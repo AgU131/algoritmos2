@@ -5,8 +5,7 @@
 #include <stdlib.h>
 #include "weather.h"
 
-Weather weather_from_file(FILE* file)
-{
+Weather weather_from_file(FILE* file) {
     Weather weather;
     /* Completar acá! */
     int datos = fscanf(file, " %d %d %d %u %u %u ",
@@ -22,7 +21,6 @@ Weather weather_from_file(FILE* file)
       fprintf(stderr, "INVALID FILE.");
       exit(EXIT_FAILURE);
     }
-
 
     return weather;
 }

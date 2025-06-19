@@ -9,7 +9,7 @@
 #include <stdlib.h>
 
 /* Then, this project's includes, alphabetically ordered */
-#include "weather_table.h"
+#include "weather_utils.h"
 
 /**
  * @brief print usage help
@@ -68,6 +68,34 @@ int main(int argc, char *argv[]) {
 
     /* parse the file to fill the table */
     table_from_file(table, filepath);
+
+    // min_temp_min();
+    // max_temp_max();
+    // month_max_rainfall();
+    
+// Usar funciones de weather_utils.h
+    int min_temp = min_hist_temp(table);
+    printf("Lowest historical minimum temperature: %d°C\n", min_temp);
+
+    int max_temp_per_year[YEARS];
+    max_hist_temp(table, max_temp_per_year);
+    printf("Max temperatures per year:\n");
+    for (unsigned int year = 0; year < YEARS; year++) {
+        printf("  %u: %d°C\n", FST_YEAR + year, max_temp_per_year[year]);
+    }
+
+    month_t rainiest_months[YEARS];
+    max_prec_per_month(table, rainiest_months);
+    const char* month_names[MONTHS] = {
+        "January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+    };
+    printf("Rainiest month per year:\n");
+    for (unsigned int year = 0; year < YEARS; year++) {
+        printf("  %u: %s\n", FST_YEAR + year, month_names[rainiest_months[year]]);
+    }
+
+
 
     /* show the table in the screen */
     table_dump(table);

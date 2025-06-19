@@ -16,6 +16,7 @@
         "assert.h": "c",
         "cstdlib": "c",
         "stdio.h": "c",
-        "strfuncs.h": "c"
+        "strfuncs.h": "c",
+        "weather_utils.h": "c"
     }
 }
