@@ -34,7 +34,7 @@ static int cima_rec(int a[], int lft, int rgt) {
         cima = mid;
     } else if (izq_cima(a, mid)) {
         cima = cima_rec(a, lft, mid - 1); // La cima está en la parte izquierda, llamamos recursivamente a la mitad izquierda
-    } else if (der_cima(a, mid)) { // añadido aca tmb
+    } else if (der_cima(a, mid)) {
         cima = cima_rec(a, mid + 1, rgt);  // La cima está en la parte derecha, llamamos recursivamente a la mitad derecha
     }
 
