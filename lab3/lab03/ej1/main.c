@@ -72,7 +72,7 @@ int main(int argc, char *argv[]) {
     // min_temp_min();
     // max_temp_max();
     // month_max_rainfall();
-    
+
 // Usar funciones de weather_utils.h
     int min_temp = min_hist_temp(table);
     printf("Lowest historical minimum temperature: %d°C\n", min_temp);
@@ -95,10 +95,7 @@ int main(int argc, char *argv[]) {
         printf("  %u: %s\n", FST_YEAR + year, month_names[rainiest_months[year]]);
     }
 
-
-
-    /* show the table in the screen */
-    table_dump(table);
-
+    /* show the table in the screen */ //Lo ocultamos por ahora para que no me oculte lo que queria ver antes por la cantidad de datos
+    // table_dump(table);
     return EXIT_SUCCESS;
 }
